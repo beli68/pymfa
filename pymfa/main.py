@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-from __future__ import division, print_function, unicode_literals
+from __future__ import division, print_function
 from future_builtins import *
 import os
 import sys
@@ -50,6 +50,7 @@ def add_setting(profile, key, description):
 
     # Check existence of configuration file
     # If there is a directory, we can create a file
+    dir, _ = os.path.split(INI_FILE)
     if not os.path.exists(dir):
         os.makedirs(dir)
     with open(INI_FILE, 'wb') as configfile:
